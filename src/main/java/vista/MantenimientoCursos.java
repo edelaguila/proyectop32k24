@@ -5,10 +5,10 @@
  */
 package vista;
 
-import datos.EmpleadoDAO;
-import datos.CursosDAO;
-import domain.Empleado;
-import domain.Cursos;
+import modelo.EmpleadoDAO;
+import modelo.CursosDAO;
+import controlador.Empleado;
+import controlador.Cursos;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import java.io.File;

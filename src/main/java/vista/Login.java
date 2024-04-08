@@ -5,8 +5,8 @@
  */
 package vista;
 
-import datos.UsuarioDAO;
-import domain.Usuario;
+import modelo.UsuarioDAO;
+import controlador.Usuario;
 import java.awt.HeadlessException;
 
 import javax.swing.JOptionPane;

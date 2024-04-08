@@ -3,52 +3,46 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package datos;
+package modelo;
 
-import domain.Cursos;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import controlador.Usuario;
+import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  *
  * @author visitante
  */
-public class CursosDAO {
+public class UsuarioDAO {
 
-    private static final String SQL_SELECT = "SELECT codigo_curso, nombre_curso, estatus_curso FROM cursos";
-    private static final String SQL_INSERT = "INSERT INTO cursos(codigo_curso, nombre_curso, estatus_curso) VALUES(?, ?, ?)";
-    private static final String SQL_UPDATE = "UPDATE cursos SET nombre_curso=?, estatus_curso=? WHERE codigo_curso = ?";
-    private static final String SQL_DELETE = "DELETE FROM cursos WHERE codigo_curso=?";
-    private static final String SQL_QUERY = "SELECT codigo_cursos, nombre_curso, estatus_curso FROM cursos WHERE codigo_curso = ?";
+    private static final String SQL_SELECT = "SELECT id_usuario, username, password FROM usuario";
+    private static final String SQL_INSERT = "INSERT INTO usuario(username, password) VALUES(?, ?)";
+    private static final String SQL_UPDATE = "UPDATE usuario SET username=?, password=? WHERE id_usuario = ?";
+    private static final String SQL_DELETE = "DELETE FROM usuario WHERE id_usuario=?";
+    private static final String SQL_QUERY = "SELECT id_usuario, username, password FROM usuario WHERE username = ?";
 
-    public List<Cursos> select() {
+    public List<Usuario> select() {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Cursos curso = null;
-        List<Cursos> cursos = new ArrayList<Cursos>();
-
+        Usuario usuario = null;
+        List<Usuario> usuarios = new ArrayList<Usuario>();
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                String codigo = rs.getString("codigo_curso");
-                String nombre = rs.getString("nombre_curso");
-                String estatus = rs.getString("estatus_curso");
-                
-                curso = new Cursos();
-                curso.setCodigo_curso(codigo);
-                curso.setNombre_curso(nombre);
-                curso.setEstatus_curso(estatus);
-                
-                cursos.add(curso);
+                int id_usuario = rs.getInt("id_usuario");
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+
+                usuario = new Usuario();
+                usuario.setId_usuario(id_usuario);
+                usuario.setUsername(username);
+                usuario.setPassword(password);
+
+                usuarios.add(usuario);
             }
 
         } catch (SQLException ex) {
@@ -59,19 +53,19 @@ public class CursosDAO {
             Conexion.close(conn);
         }
 
-        return cursos;
+        return usuarios;
     }
 
-    public int insert(Cursos curso) {
+    public int insert(Usuario usuario) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int rows = 0;
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
-            stmt.setString(1, curso.getCodigo_curso());
-            stmt.setString(2, curso.getNombre_curso());
-            stmt.setString(3, curso.getEstatus_curso());
+            stmt.setString(1, usuario.getUsername());
+            stmt.setString(2, usuario.getPassword());
+
             System.out.println("ejecutando query:" + SQL_INSERT);
             rows = stmt.executeUpdate();
             System.out.println("Registros afectados:" + rows);
@@ -85,18 +79,17 @@ public class CursosDAO {
         return rows;
     }
 
-    public int update(Cursos curso) {
+    public int update(Usuario usuario) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int rows = 0;
-
         try {
             conn = Conexion.getConnection();
             System.out.println("ejecutando query: " + SQL_UPDATE);
             stmt = conn.prepareStatement(SQL_UPDATE);
-            stmt.setString(1, curso.getNombre_curso());
-            stmt.setString(2, curso.getEstatus_curso());
-            stmt.setString(3, curso.getCodigo_curso());
+            stmt.setString(1, usuario.getUsername());
+            stmt.setString(2, usuario.getPassword());
+            stmt.setInt(3, usuario.getId_usuario());
 
             rows = stmt.executeUpdate();
             System.out.println("Registros actualizado:" + rows);
@@ -111,7 +104,7 @@ public class CursosDAO {
         return rows;
     }
 
-    public int delete(Cursos curso) {
+    public int delete(Usuario usuario) {
         Connection conn = null;
         PreparedStatement stmt = null;
         int rows = 0;
@@ -120,7 +113,7 @@ public class CursosDAO {
             conn = Conexion.getConnection();
             System.out.println("Ejecutando query:" + SQL_DELETE);
             stmt = conn.prepareStatement(SQL_DELETE);
-            stmt.setString(1, curso.getCodigo_curso());
+            stmt.setInt(1, usuario.getId_usuario());
             rows = stmt.executeUpdate();
             System.out.println("Registros eliminados:" + rows);
         } catch (SQLException ex) {
@@ -133,32 +126,27 @@ public class CursosDAO {
         return rows;
     }
 
-//    public List<Persona> query(Persona vendedor) { // Si se utiliza un ArrayList
-    public Cursos query(Cursos curso) {    
+    public Usuario query(Usuario usuario) {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        
-        int rows = 0;
-
         try {
             conn = Conexion.getConnection();
             System.out.println("Ejecutando query:" + SQL_QUERY);
             stmt = conn.prepareStatement(SQL_QUERY);
-            stmt.setString(1, curso.getCodigo_curso());
+            stmt.setString(1, usuario.getUsername());
             rs = stmt.executeQuery();
             while (rs.next()) {
-                String codigo = rs.getString("codigo_curso");
-                String nombre = rs.getString("nombre_curso");
-                String estatus = rs.getString("estatus_curso");
-                
-                curso = new Cursos();
-                curso.setCodigo_curso(codigo);
-                curso.setNombre_curso(nombre);
-                curso.setEstatus_curso(estatus);
-        
+                int id_usuario = rs.getInt("id_usuario");
+                String username = rs.getString("username");
+                String password = rs.getString("password");
+
+                usuario = new Usuario();
+                usuario.setId_usuario(id_usuario);
+                usuario.setUsername(username);
+                usuario.setPassword(password);
             }
-            //System.out.println("Registros buscado:" + vendedor);
+            //System.out.println("Registros buscado:" + persona);
         } catch (SQLException ex) {
             ex.printStackTrace(System.out);
         } finally {
@@ -166,7 +154,8 @@ public class CursosDAO {
             Conexion.close(stmt);
             Conexion.close(conn);
         }
-        return curso;
+
+        //return personas;  // Si se utiliza un ArrayList
+        return usuario;
     }
-        
 }
