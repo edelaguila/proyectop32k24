@@ -1,23 +1,10 @@
-<<<<<<< HEAD
-C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\datos\VendedorDAO.java
-C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\vista\MantenimientoVendedores.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\controlador\Cursos.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\controlador\Empleado.java
 C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\vista\Login.java
-C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\domain\Vendedor.java
-C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\datos\EmpleadoDAO.java
-C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\datos\Conexion.java
-C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\domain\Empleado.java
-C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\domain\Usuario.java
-C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\datos\UsuarioDAO.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\modelo\Conexion.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\vista\MantenimientoCursos.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\modelo\EmpleadoDAO.java
 C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\vista\MdiGeneral.java
-=======
-C:\Users\Soporte\Documents\Profesional\Umg\Didactica2k24\proyectos\progratres2k24\proyectop32k24\src\main\java\vista\MdiGeneral.java
-C:\Users\Soporte\Documents\Profesional\Umg\Didactica2k24\proyectos\progratres2k24\proyectop32k24\src\main\java\vista\MantenimientoVendedores.java
-C:\Users\Soporte\Documents\Profesional\Umg\Didactica2k24\proyectos\progratres2k24\proyectop32k24\src\main\java\domain\Empleado.java
-C:\Users\Soporte\Documents\Profesional\Umg\Didactica2k24\proyectos\progratres2k24\proyectop32k24\src\main\java\datos\Conexion.java
-C:\Users\Soporte\Documents\Profesional\Umg\Didactica2k24\proyectos\progratres2k24\proyectop32k24\src\main\java\datos\UsuarioDAO.java
-C:\Users\Soporte\Documents\Profesional\Umg\Didactica2k24\proyectos\progratres2k24\proyectop32k24\src\main\java\domain\Usuario.java
-C:\Users\Soporte\Documents\Profesional\Umg\Didactica2k24\proyectos\progratres2k24\proyectop32k24\src\main\java\vista\Login.java
-C:\Users\Soporte\Documents\Profesional\Umg\Didactica2k24\proyectos\progratres2k24\proyectop32k24\src\main\java\datos\EmpleadoDAO.java
-C:\Users\Soporte\Documents\Profesional\Umg\Didactica2k24\proyectos\progratres2k24\proyectop32k24\src\main\java\datos\VendedorDAO.java
-C:\Users\Soporte\Documents\Profesional\Umg\Didactica2k24\proyectos\progratres2k24\proyectop32k24\src\main\java\domain\Vendedor.java
->>>>>>> 303cc9eefb8fe20e2e156672a8202a155bc5b8ac
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\controlador\Usuario.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\modelo\CursosDAO.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\modelo\UsuarioDAO.java
