@@ -25,7 +25,7 @@ public class CursosDAO {
     private static final String SQL_INSERT = "INSERT INTO cursos(codigo_curso, nombre_curso, estatus_curso) VALUES(?, ?, ?)";
     private static final String SQL_UPDATE = "UPDATE cursos SET nombre_curso=?, estatus_curso=? WHERE codigo_curso = ?";
     private static final String SQL_DELETE = "DELETE FROM cursos WHERE codigo_curso=?";
-    private static final String SQL_QUERY = "SELECT codigo_cursos, nombre_curso, estatus_curso FROM cursos WHERE codigo_curso = ?";
+    private static final String SQL_QUERY = "SELECT codigo_curso, nombre_curso, estatus_curso FROM cursos WHERE codigo_curso = ?";
 
     public List<Cursos> select() {
         Connection conn = null;
