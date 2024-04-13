@@ -127,7 +127,7 @@ CREATE TABLE asignacioncursosalumnos
   ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 -- -----------------------------------------------------
 -- Table `educativo`.`Asignacion_cursos_maestros`
--- -----------------------------------------------------
+-- --------------------------------usuario---------------------
 CREATE TABLE asignacioncursosmastros
 (
   codigo_carrera VARCHAR(5),

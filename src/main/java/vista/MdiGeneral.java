@@ -44,6 +44,7 @@ public class MdiGeneral extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
@@ -99,6 +100,9 @@ public class MdiGeneral extends javax.swing.JFrame {
 
         jMenuItem4.setText("Mantenimiento Alumnos");
         jMenu3.add(jMenuItem4);
+
+        jMenuItem5.setText("Mantenimiento Maestros");
+        jMenu3.add(jMenuItem5);
 
         jMenu1.add(jMenu3);
 
@@ -195,6 +199,7 @@ public class MdiGeneral extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem menuAbrir_sesion;
     private javax.swing.JMenuItem menuCerrar_sesion;
     // End of variables declaration//GEN-END:variables
