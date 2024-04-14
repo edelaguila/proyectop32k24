@@ -60,6 +60,14 @@
                     <Property name="text" type="java.lang.String" value="Mantenimiento Alumnos"/>
                   </Properties>
                 </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="menuMant_Carreras">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Mantenimiento Carreras"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuMant_CarrerasActionPerformed"/>
+                  </Events>
+                </MenuItem>
               </SubComponents>
             </Menu>
           </SubComponents>
