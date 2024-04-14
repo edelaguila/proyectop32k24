@@ -98,6 +98,11 @@ public class MdiGeneral extends javax.swing.JFrame {
         jMenu3.add(jMenuItem3);
 
         jMenuItem4.setText("Mantenimiento Alumnos");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem4);
 
         jMenu1.add(jMenu3);
@@ -146,6 +151,15 @@ public class MdiGeneral extends javax.swing.JFrame {
     private void menuAbrir_sesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAbrir_sesionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_menuAbrir_sesionActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        MantenimientoAlumnos ventana = new MantenimientoAlumnos();
+        jDesktopPane1.add(ventana);
+        Dimension desktopSize = jDesktopPane1.getSize();
+        Dimension FrameSize = ventana.getSize();
+        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments

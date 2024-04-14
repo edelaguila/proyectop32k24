@@ -1,26 +1,26 @@
 package controlador;
 
 public class Alumnos {
-    private int carnet_alumno;
+    private String carnet_alumno;
     private String nombre_alumno;
     private String direccion_alumno;
-    private int telefono_alumno;
+    private String telefono_alumno;
     private String email_alumno;
     private String estatus_alumno;
 
     public Alumnos() {
     }
 
-    public Alumnos(int carnet_alumno) {
+    public Alumnos(String carnet_alumno) {
         this.carnet_alumno = carnet_alumno;
     }
     
-    public Alumnos(String nombre_alumno, int carnet_alumno) {
+    public Alumnos(String nombre_alumno, String carnet_alumno) {
         this.nombre_alumno = nombre_alumno;
         this.carnet_alumno = carnet_alumno;
     }
     
-    public Alumnos(int carnet_alumno, String username, String password, int telefono_alumno, String email_alumno, String estatus_alumno) {
+    public Alumnos(String carnet_alumno, String username, String password, String telefono_alumno, String email_alumno, String estatus_alumno) {
         this.carnet_alumno = carnet_alumno;
         this.nombre_alumno = username;
         this.direccion_alumno = password;
@@ -30,11 +30,11 @@ public class Alumnos {
     }
     
 
-    public int getCarnet_alumno() {
+    public String getCarnet_alumno() {
         return carnet_alumno;
     }
 
-    public void setCarnet_alumno(int carnet_alumno) {
+    public void setCarnet_alumno(String carnet_alumno) {
         this.carnet_alumno = carnet_alumno;
     }
 
@@ -54,11 +54,11 @@ public class Alumnos {
         this.direccion_alumno = direccion_alumno;
     }
     
-    public int getTelefono_alumno() {
+    public String getTelefono_alumno() {
         return telefono_alumno;
     }
 
-    public void setTelefono_alumno(int telefono_alumno) {
+    public void setTelefono_alumno(String telefono_alumno) {
         this.telefono_alumno = telefono_alumno;
     }
 

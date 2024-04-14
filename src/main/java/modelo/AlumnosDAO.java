@@ -31,10 +31,10 @@ public class AlumnosDAO {
             stmt = conn.prepareStatement(SQL_SELECT);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int carnet_alumno = rs.getInt("carnet_alummno");
+                String carnet_alumno = rs.getString("carnet_alummno");
                 String nombre_alumno = rs.getString("nombre_alumno");
                 String direccion_alumno = rs.getString("direccion_alumno");
-                int telefono_alumno = rs.getInt("telefono_alummno");
+                String telefono_alumno = rs.getString("telefono_alummno");
                 String email_alumno = rs.getString("email_alumno");
                 String estatus_alumno = rs.getString("estatus_alumno");
 
@@ -67,10 +67,10 @@ public class AlumnosDAO {
         try {
             conn = Conexion.getConnection();
             stmt = conn.prepareStatement(SQL_INSERT);
-            stmt.setInt(1, alumnos.getCarnet_alumno());
+            stmt.setString(1, alumnos.getCarnet_alumno());
             stmt.setString(2, alumnos.getNombre_alumno());
             stmt.setString(3, alumnos.getDireccion_alumno());
-            stmt.setInt(4, alumnos.getTelefono_alumno());
+            stmt.setString(4, alumnos.getTelefono_alumno());
             stmt.setString(5, alumnos.getEmail_alumno());
             stmt.setString(6, alumnos.getEstatus_alumno());
 
@@ -97,10 +97,10 @@ public class AlumnosDAO {
             stmt = conn.prepareStatement(SQL_UPDATE);
             stmt.setString(2, alumnos.getNombre_alumno());
             stmt.setString(3, alumnos.getDireccion_alumno());
-            stmt.setInt(1, alumnos.getCarnet_alumno());
+            stmt.setString(1, alumnos.getCarnet_alumno());
             stmt.setString(5, alumnos.getEmail_alumno());
             stmt.setString(6, alumnos.getEstatus_alumno());
-            stmt.setInt(4, alumnos.getTelefono_alumno());
+            stmt.setString(4, alumnos.getTelefono_alumno());
 
             rows = stmt.executeUpdate();
             System.out.println("Registros actualizado:" + rows);
@@ -124,7 +124,7 @@ public class AlumnosDAO {
             conn = Conexion.getConnection();
             System.out.println("Ejecutando query:" + SQL_DELETE);
             stmt = conn.prepareStatement(SQL_DELETE);
-            stmt.setInt(1, alumno.getCarnet_alumno());
+            stmt.setString(1, alumno.getCarnet_alumno());
             rows = stmt.executeUpdate();
             System.out.println("Registros eliminados:" + rows);
         } catch (SQLException ex) {
@@ -148,10 +148,10 @@ public class AlumnosDAO {
             stmt.setString(1, alumno.getNombre_alumno());
             rs = stmt.executeQuery();
             while (rs.next()) {
-                int carnet_alumno = rs.getInt("carnet_alumno");
+                String carnet_alumno = rs.getString("carnet_alumno");
                 String nombre_alumno = rs.getString("nombre_alumno");
                 String direccion_alumno = rs.getString("direccion__alumno");
-                int telefono_alumno = rs.getInt("telefono_alumno");
+                String telefono_alumno = rs.getString("telefono_alumno");
                 String email_alumno = rs.getString("email_alumno");
                 String estatus_alumno = rs.getString("estatus_alumno");
 
