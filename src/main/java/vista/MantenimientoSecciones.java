@@ -7,14 +7,15 @@ package vista;
 
 import modelo.EmpleadoDAO;
 import modelo.CursosDAO;
+import modelo.SeccionDAO;
 import controlador.Empleado;
 import controlador.Cursos;
+import controlador.Seccion;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Set;
-
 /**
  *
  * @author visitante
@@ -32,30 +33,30 @@ public class MantenimientoSecciones extends javax.swing.JInternalFrame {
 
     public void llenadoDeTablas() {
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("ID Curso");
+        modelo.addColumn("ID Seccion");
         modelo.addColumn("nombre");
         modelo.addColumn("Estatus");
-        CursosDAO cursoDAO = new CursosDAO();
-        List<Cursos> cursos = cursoDAO.select();
+        SeccionDAO seccionDAO = new SeccionDAO();
+        List<Seccion> Seccion = seccionDAO.select();
         tablaVendedores.setModel(modelo);
         String[] dato = new String[3];
-        for (int i = 0; i < cursos.size(); i++) {
-            dato[0] = cursos.get(i).getCodigo_curso();
-            dato[1] = cursos.get(i).getNombre_curso();
-            dato[2] = cursos.get(i).getEstatus_curso();
+        for (int i = 0; i < Seccion.size(); i++) {
+            dato[0] = Seccion.get(i).getCodigo_seccion();
+            dato[1] = Seccion.get(i).getNombre_seccion();
+            dato[2] = Seccion.get(i).getEstatus_seccion();
             //System.out.println("vendedor:" + vendedores);
             modelo.addRow(dato);
         }
     }
 
     public void buscarVendedor() {
-        Cursos cursoAConsultar = new Cursos();
-        CursosDAO cursoDAO = new CursosDAO();
-        cursoAConsultar.setCodigo_curso((txtbuscado.getText()));
-        cursoAConsultar = cursoDAO.query(cursoAConsultar);
-        txtCodigo.setText(cursoAConsultar.getCodigo_curso());
-        txtNombre.setText(cursoAConsultar.getNombre_curso());
-        txtEstatus.setText(cursoAConsultar.getEstatus_curso());
+        Seccion seccionAConsultar = new Seccion();
+        SeccionDAO seccionDAO = new SeccionDAO();
+        seccionAConsultar.setCodigo_seccion((txtbuscado.getText()));
+        seccionAConsultar = seccionDAO.query(seccionAConsultar);
+        txtCodigo.setText(seccionAConsultar.getCodigo_seccion());
+        txtNombre.setText(seccionAConsultar.getNombre_seccion());
+        txtEstatus.setText(seccionAConsultar.getEstatus_seccion());
     }
 
     public MantenimientoSecciones() {
