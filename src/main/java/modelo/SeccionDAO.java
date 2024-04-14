@@ -58,4 +58,27 @@ public class SeccionDAO {
 
         return secciones;
     }
+        
+    public int insert(Seccion seccion) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        int rows = 0;
+        try {
+            conn = Conexion.getConnection();
+            stmt = conn.prepareStatement(SQL_INSERT);
+            stmt.setString(1, seccion.getCodigo_seccion());
+            stmt.setString(2, seccion.getNombre_seccion());
+            stmt.setString(3, seccion.getEstatus_seccion());
+            System.out.println("ejecutando query:" + SQL_INSERT);
+            rows = stmt.executeUpdate();
+            System.out.println("Registros afectados:" + rows);
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(stmt);
+            Conexion.close(conn);
+        }
+
+        return rows;
+    }
 }
