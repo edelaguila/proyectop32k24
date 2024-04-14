@@ -317,21 +317,21 @@ public class MantenimientoSecciones extends javax.swing.JInternalFrame {
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
-        CursosDAO cursoDAO = new CursosDAO();
-        Cursos cursoAEliminar = new Cursos();
-        cursoAEliminar.setCodigo_curso(txtbuscado.getText());
-        cursoDAO.delete(cursoAEliminar);
+        SeccionDAO seccionDAO = new SeccionDAO();
+        Seccion seccionAEliminar = new Seccion();
+        seccionAEliminar.setCodigo_seccion(txtbuscado.getText());
+        seccionDAO.delete(seccionAEliminar);
         llenadoDeTablas();
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        CursosDAO cursoDAO = new CursosDAO();
-        Cursos cursoAInsertar = new Cursos();
-        cursoAInsertar.setCodigo_curso(txtCodigo.getText());
+        SeccionDAO seccionDAO = new SeccionDAO();
+        Seccion seccionAInsertar = new Seccion();
+        seccionAInsertar.setCodigo_seccion(txtCodigo.getText());
         
-        cursoAInsertar.setNombre_curso(txtNombre.getText());
-        cursoAInsertar.setEstatus_curso(txtEstatus.getText());
-        cursoDAO.insert(cursoAInsertar);
+        seccionAInsertar.setNombre_seccion(txtNombre.getText());
+        seccionAInsertar.setEstatus_seccion(txtEstatus.getText());
+        seccionDAO.insert(seccionAInsertar);
         llenadoDeTablas();
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
@@ -342,12 +342,12 @@ public class MantenimientoSecciones extends javax.swing.JInternalFrame {
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
 //        // TODO add your handling code here:
-        CursosDAO cursoDAO = new CursosDAO();
-        Cursos cursoAActualizar = new Cursos();
-        cursoAActualizar.setCodigo_curso(txtbuscado.getText());
-        cursoAActualizar.setNombre_curso(txtNombre.getText());
-        cursoAActualizar.setEstatus_curso(txtEstatus.getText());
-        cursoDAO.update(cursoAActualizar);
+        SeccionDAO seccionDAO = new SeccionDAO();
+        Seccion seccionAActualizar = new Seccion();
+        seccionAActualizar.setCodigo_seccion(txtbuscado.getText());
+        seccionAActualizar.setNombre_seccion(txtNombre.getText());
+        seccionAActualizar.setEstatus_seccion(txtEstatus.getText());
+        seccionDAO.update(seccionAActualizar);
         llenadoDeTablas();
     }//GEN-LAST:event_btnModificarActionPerformed
 
