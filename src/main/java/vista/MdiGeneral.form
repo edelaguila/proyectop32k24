@@ -60,7 +60,7 @@
                     <Property name="text" type="java.lang.String" value="Mantenimiento Alumnos"/>
                   </Properties>
                 </MenuItem>
-                <MenuItem class="javax.swing.JCheckBoxMenuItem" name="jCheckBoxMenuItem1">
+                <MenuItem class="javax.swing.JCheckBoxMenuItem" name="Mantenimiento_secciones">
                   <Properties>
                     <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Mantenimiento Secciones"/>
