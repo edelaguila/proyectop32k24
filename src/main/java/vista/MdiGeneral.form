@@ -60,11 +60,13 @@
                     <Property name="text" type="java.lang.String" value="Mantenimiento Alumnos"/>
                   </Properties>
                 </MenuItem>
-                <MenuItem class="javax.swing.JCheckBoxMenuItem" name="Mantenimiento_secciones">
+                <MenuItem class="javax.swing.JMenuItem" name="Mantenimiento_Secciones">
                   <Properties>
-                    <Property name="selected" type="boolean" value="true"/>
                     <Property name="text" type="java.lang.String" value="Mantenimiento Secciones"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Mantenimiento_SeccionesActionPerformed"/>
+                  </Events>
                 </MenuItem>
               </SubComponents>
             </Menu>
