@@ -81,4 +81,91 @@ public class SeccionDAO {
 
         return rows;
     }
+        public int update(Seccion seccion) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            System.out.println("ejecutando query: " + SQL_UPDATE);
+            stmt = conn.prepareStatement(SQL_UPDATE);
+            stmt.setString(1, seccion.getNombre_seccion());
+            stmt.setString(2, seccion.getEstatus_seccion());
+            stmt.setString(3, seccion.getCodigo_seccion());
+            
+
+            rows = stmt.executeUpdate();
+            System.out.println("Registros actualizado:" + rows);
+
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(stmt);
+            Conexion.close(conn);
+        }
+
+        return rows;
+    }
+
+    public int delete(Seccion seccion) {
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            System.out.println("Ejecutando query:" + SQL_DELETE);
+            stmt = conn.prepareStatement(SQL_DELETE);
+            stmt.setString(1, seccion.getCodigo_seccion());
+            rows = stmt.executeUpdate();
+            System.out.println("Registros eliminados:" + rows);
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(stmt);
+            Conexion.close(conn);
+        }
+
+        return rows;
+    }
+
+//    public List<Persona> query(Persona empleado) { // Si se utiliza un ArrayList
+    public Seccion query(Seccion seccion) {    
+        Connection conn = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        
+        int rows = 0;
+
+        try {
+            conn = Conexion.getConnection();
+            System.out.println("Ejecutando query:" + SQL_QUERY);
+            stmt = conn.prepareStatement(SQL_QUERY);
+            stmt.setString(1, seccion.getCodigo_seccion());
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                String codigo = rs.getString("codigo_seccion");
+                String nombre = rs.getString("nombre_seccion");
+                String estatus = rs.getString("estatus_seccion");
+                
+                seccion = new Seccion();
+                seccion.setCodigo_seccion(codigo);
+                seccion.setNombre_seccion(nombre);
+                seccion.setEstatus_seccion(estatus);
+                
+                //empleados.add(empleado); // Si se utiliza un ArrayList
+            }
+            //System.out.println("Registros buscado:" + empleado);
+        } catch (SQLException ex) {
+            ex.printStackTrace(System.out);
+        } finally {
+            Conexion.close(rs);
+            Conexion.close(stmt);
+            Conexion.close(conn);
+        }
+
+        //return empleados;  // Si se utiliza un ArrayList
+        return seccion;
+    }
 }
