@@ -19,7 +19,7 @@ import java.util.Set;
  * @author alumno
  */
 public class SeccionDAO {
-        private static final String SQL_SELECT = "SELECT codigo_seccion, nombre_seccion, estatus_seccion FROM secciones";
+    private static final String SQL_SELECT = "SELECT codigo_seccion, nombre_seccion, estatus_seccion FROM secciones";
     private static final String SQL_INSERT = "INSERT INTO secciones(nombre_seccion, estatus_seccion) VALUES(?, ?)";
     private static final String SQL_UPDATE = "UPDATE secciones SET nombre_seccion=?, estatus_seccion=? WHERE id_empleado = ?";
     private static final String SQL_DELETE = "DELETE FROM secciones WHERE codigo_seccion=?";
