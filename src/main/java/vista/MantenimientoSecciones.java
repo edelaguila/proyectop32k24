@@ -104,7 +104,7 @@ public class MantenimientoSecciones extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Mantenimiento Cursos");
+        setTitle("Mantenimiento Secciones");
         setVisible(true);
 
         btnEliminar.setText("Eliminar");
@@ -143,6 +143,11 @@ public class MantenimientoSecciones extends javax.swing.JInternalFrame {
 
         txtNombre.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         txtNombre.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -385,6 +390,10 @@ public class MantenimientoSecciones extends javax.swing.JInternalFrame {
             ex.printStackTrace();
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
