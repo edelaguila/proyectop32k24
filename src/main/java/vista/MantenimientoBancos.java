@@ -20,7 +20,6 @@ public void llenadoDeTablas() {
     DefaultTableModel modelo = new DefaultTableModel();
     modelo.addColumn("ID Banco");
     modelo.addColumn("Nombre");
-    // No se incluye "Estatus" ya que no se mostrará en la tabla
     BancosDAO bancosDAO = new BancosDAO();
     List<Bancos> bancos = bancosDAO.select();
     tablaBancos.setModel(modelo);
