@@ -14,7 +14,6 @@ import javax.swing.table.DefaultTableModel;
 public class MantenimientoBancos extends javax.swing.JInternalFrame {
 
 public void llenadoDeCombos() {
-    // Aquí puedes llenar tus combos si necesitas implementar esta funcionalidad
 }
 
 public void llenadoDeTablas() {
