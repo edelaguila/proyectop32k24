@@ -45,6 +45,11 @@ public class MdiGeneral extends javax.swing.JFrame {
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
+        menuTablaBancos = new javax.swing.JMenuItem();
+        menuTablaTipoPago = new javax.swing.JMenuItem();
+        menuTablaTipoMoneda = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
 
@@ -105,6 +110,23 @@ public class MdiGeneral extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu4.setText("Procesos");
+
+        jMenu8.setText("Asignación de Cursos a Maestros ");
+        jMenu4.add(jMenu8);
+
+        jMenu7.setText("Tesoreria");
+
+        menuTablaBancos.setText("Tabla Bancos");
+        jMenu7.add(menuTablaBancos);
+
+        menuTablaTipoPago.setText("Tabla Tipo de pago");
+        jMenu7.add(menuTablaTipoPago);
+
+        menuTablaTipoMoneda.setText("Tabla Tipo de monedas");
+        jMenu7.add(menuTablaTipoMoneda);
+
+        jMenu4.add(jMenu7);
+
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Reportes");
@@ -190,6 +212,8 @@ public class MdiGeneral extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
@@ -197,5 +221,8 @@ public class MdiGeneral extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem menuAbrir_sesion;
     private javax.swing.JMenuItem menuCerrar_sesion;
+    private javax.swing.JMenuItem menuTablaBancos;
+    private javax.swing.JMenuItem menuTablaTipoMoneda;
+    private javax.swing.JMenuItem menuTablaTipoPago;
     // End of variables declaration//GEN-END:variables
 }

@@ -95,8 +95,6 @@ public class EmpleadoDAO {
             stmt = conn.prepareStatement(SQL_UPDATE);
             stmt.setString(1, empleado.getNombreEmpleado());
             stmt.setString(2, empleado.getDireEmpleado());
-            
-
             rows = stmt.executeUpdate();
             System.out.println("Registros actualizado:" + rows);
 
