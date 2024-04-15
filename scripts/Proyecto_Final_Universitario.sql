@@ -170,3 +170,40 @@ CREATE TABLE bancoasociado
     cambioMoneda VARCHAR(30),
     monto DECIMAL
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+-- -----------------------------------------------------
+-- Table `siu`.`Bancos`
+-- -----------------------------------------------------
+CREATE TABLE bancos
+(
+  id_banco INT NOT NULL AUTO_INCREMENT,
+  nombre_banco VARCHAR(45),
+  PRIMARY KEY (id_banco)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+-- -----------------------------------------------------
+-- Table `siu`.`Tipo_Pago`
+-- -----------------------------------------------------
+CREATE TABLE tipo_pago
+(
+  id_tipo_pago INT NOT NULL AUTO_INCREMENT,
+  nombre_tipo_pago VARCHAR(45),
+  PRIMARY KEY (id_tipo_pago)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+-- -----------------------------------------------------
+-- Table `siu`.`Tesoreria`
+-- -----------------------------------------------------
+CREATE TABLE Tesoreria (
+    id_tesoreria INT NOT NULL AUTO_INCREMENT,
+    concepto VARCHAR(100),
+    monto DECIMAL(10, 2),
+    fecha DATE,
+    id_banco INT,
+    id_tipo_pago INT,
+    id_moneda INT,
+    PRIMARY KEY (id_tesoreria),
+    FOREIGN KEY (id_banco) REFERENCES bancos(id_banco),
+    FOREIGN KEY (id_tipo_pago) REFERENCES tipo_pago(id_tipo_pago),
+    FOREIGN KEY (id_moneda) REFERENCES tipo_monedas(id_moneda)
+)ENGINE = InnoDB DEFAULT CHARSET=latin1;
