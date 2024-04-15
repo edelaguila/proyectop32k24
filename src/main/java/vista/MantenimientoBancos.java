@@ -13,22 +13,25 @@ import javax.swing.table.DefaultTableModel;
 
 public class MantenimientoBancos extends javax.swing.JInternalFrame {
 
-    public void llenadoDeTablas() {
-        DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("ID Banco");
-        modelo.addColumn("Nombre");
-        modelo.addColumn("Estatus");
-        BancosDAO bancosDAO = new BancosDAO();
-        List<Bancos> bancos = bancosDAO.select();
-        tablaBancos.setModel(modelo);
-        String[] dato = new String[3];
-        for (int i = 0; i < bancos.size(); i++) {
-            dato[0] = bancos.get(i).getCodigo_banco();
-            dato[1] = bancos.get(i).getNombre_banco();
-            dato[2] = bancos.get(i).getEstatus_banco();
-            modelo.addRow(dato);
-        }
+public void llenadoDeCombos() {
+    // Aquí puedes llenar tus combos si necesitas implementar esta funcionalidad
+}
+
+public void llenadoDeTablas() {
+    DefaultTableModel modelo = new DefaultTableModel();
+    modelo.addColumn("ID Banco");
+    modelo.addColumn("Nombre");
+    // No se incluye "Estatus" ya que no se mostrará en la tabla
+    BancosDAO bancosDAO = new BancosDAO();
+    List<Bancos> bancos = bancosDAO.select();
+    tablaBancos.setModel(modelo);
+    String[] dato = new String[2]; // Solo dos columnas: Código y Nombre
+    for (int i = 0; i < bancos.size(); i++) {
+        dato[0] = bancos.get(i).getCodigo_banco();
+        dato[1] = bancos.get(i).getNombre_banco();
+        modelo.addRow(dato);
     }
+}
 
     public void buscarBanco() {
         Bancos bancoAConsultar = new Bancos();
@@ -37,7 +40,6 @@ public class MantenimientoBancos extends javax.swing.JInternalFrame {
         bancoAConsultar = bancoDAO.query(bancoAConsultar);
         txtCodigo.setText(bancoAConsultar.getCodigo_banco());
         txtNombre.setText(bancoAConsultar.getNombre_banco());
-        txtEstatus.setText(bancoAConsultar.getEstatus_banco());
     }
 
     public MantenimientoBancos() {
@@ -62,10 +64,7 @@ public class MantenimientoBancos extends javax.swing.JInternalFrame {
         btnLimpiar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaBancos = new javax.swing.JTable();
-        txtEstatus = new javax.swing.JTextField();
-        label5 = new javax.swing.JLabel();
         lb = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         label6 = new javax.swing.JLabel();
         txtCodigo = new javax.swing.JTextField();
@@ -145,17 +144,8 @@ public class MantenimientoBancos extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(tablaBancos);
 
-        txtEstatus.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtEstatus.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
-        txtEstatus.setOpaque(false);
-
-        label5.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        label5.setText("Estatus");
-
         lb.setForeground(new java.awt.Color(204, 204, 204));
         lb.setText(".");
-
-        jButton1.setText("jButton1");
 
         jButton2.setText("Ayuda");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -198,68 +188,54 @@ public class MantenimientoBancos extends javax.swing.JInternalFrame {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label3)
-                            .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(label6))
-                        .addGap(25, 25, 25)
+                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtEstatus, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
-                            .addComponent(txtNombre)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
                             .addComponent(txtCodigo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lb, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(384, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addComponent(lb, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(label1)
                         .addGap(294, 294, 294))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(105, 105, 105))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 571, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(65, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(label1)
+                .addGap(4, 4, 4)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(4, 4, 4)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(label3))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(label6))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                            .addComponent(txtEstatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(label5)))
-                                    .addComponent(lb))
-                                .addGap(55, 55, 55)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnRegistrar)
-                                    .addComponent(btnModificar)
-                                    .addComponent(btnLimpiar))
-                                .addGap(29, 29, 29)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(btnEliminar)
-                                    .addComponent(btnBuscar)
-                                    .addComponent(txtbuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(22, 22, 22)
-                                .addComponent(jButton2))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label6)))
+                            .addComponent(lb))
+                        .addGap(90, 90, 90)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnRegistrar)
+                            .addComponent(btnModificar)
+                            .addComponent(btnLimpiar))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnEliminar)
+                            .addComponent(btnBuscar)
+                            .addComponent(txtbuscado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)
+                        .addComponent(jButton2))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(75, Short.MAX_VALUE))
         );
 
@@ -280,9 +256,20 @@ public class MantenimientoBancos extends javax.swing.JInternalFrame {
     Bancos bancoAInsertar = new Bancos();
     bancoAInsertar.setCodigo_banco(txtCodigo.getText());
     bancoAInsertar.setNombre_banco(txtNombre.getText());
-    bancoAInsertar.setEstatus_banco(txtEstatus.getText());
     bancosDAO.insert(bancoAInsertar);
     llenadoDeTablas();
+    
+    // Insertar el nuevo banco en la base de datos
+    bancosDAO.insert(bancoAInsertar);
+    
+    // Actualizar el modelo de la tabla
+    DefaultTableModel modelo = (DefaultTableModel) tablaBancos.getModel();
+    Object[] fila = {bancoAInsertar.getCodigo_banco(), bancoAInsertar.getNombre_banco()};
+    modelo.addRow(fila);
+    
+    // Limpiar los campos de entrada después de la inserción
+    txtCodigo.setText("");
+    txtNombre.setText("");
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
@@ -295,7 +282,6 @@ public class MantenimientoBancos extends javax.swing.JInternalFrame {
     Bancos bancoAActualizar = new Bancos();
     bancoAActualizar.setCodigo_banco(txtbuscado.getText());
     bancoAActualizar.setNombre_banco(txtNombre.getText());
-    bancoAActualizar.setEstatus_banco(txtEstatus.getText());
     bancosDAO.update(bancoAActualizar);
     llenadoDeTablas();
     }//GEN-LAST:event_btnModificarActionPerformed
@@ -328,19 +314,16 @@ public class MantenimientoBancos extends javax.swing.JInternalFrame {
     private javax.swing.JButton btnLimpiar;
     private javax.swing.JButton btnModificar;
     private javax.swing.JButton btnRegistrar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel label1;
     private javax.swing.JLabel label3;
-    private javax.swing.JLabel label5;
     private javax.swing.JLabel label6;
     private javax.swing.JLabel lb;
     private javax.swing.JLabel lb2;
     private javax.swing.JLabel lbusu;
     private javax.swing.JTable tablaBancos;
     private javax.swing.JTextField txtCodigo;
-    private javax.swing.JTextField txtEstatus;
     private javax.swing.JTextField txtNombre;
     private javax.swing.JTextField txtbuscado;
     // End of variables declaration//GEN-END:variables
