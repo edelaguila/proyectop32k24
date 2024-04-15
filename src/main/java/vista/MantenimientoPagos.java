@@ -19,7 +19,7 @@ import java.util.Set;
  *
  * @author visitante
  */
-public class MantenimientoCursos extends javax.swing.JInternalFrame {
+public class MantenimientoPagos extends javax.swing.JInternalFrame {
 
     public void llenadoDeCombos() {
        /*EmpleadoDAO empleadoDAO = new EmpleadoDAO();
@@ -58,7 +58,7 @@ public class MantenimientoCursos extends javax.swing.JInternalFrame {
         txtEstatus.setText(cursoAConsultar.getEstatus_curso());
     }
 
-    public MantenimientoCursos() {
+    public MantenimientoPagos() {
         initComponents();
         llenadoDeTablas();
         llenadoDeCombos();
@@ -102,7 +102,7 @@ public class MantenimientoCursos extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Mantenimiento Cursos");
+        setTitle("Mantenimiento Pagos");
         setVisible(true);
 
         btnEliminar.setText("Eliminar");
@@ -127,7 +127,7 @@ public class MantenimientoCursos extends javax.swing.JInternalFrame {
         });
 
         label1.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
-        label1.setText("Cursos");
+        label1.setText("Pagos");
 
         btnModificar.setText("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
