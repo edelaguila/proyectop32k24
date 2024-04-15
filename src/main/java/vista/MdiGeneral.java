@@ -44,7 +44,6 @@ public class MdiGeneral extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenu8 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
@@ -111,14 +110,6 @@ public class MdiGeneral extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem4);
 
-        jMenuItem5.setText("Mantenimiento Bancos");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMenuItem5);
-
         jMenu1.add(jMenu3);
 
         jMenuBar1.add(jMenu1);
@@ -131,12 +122,22 @@ public class MdiGeneral extends javax.swing.JFrame {
         jMenu7.setText("Tesoreria");
 
         menuTablaBancos.setText("Tabla Bancos");
+        menuTablaBancos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuTablaBancosActionPerformed(evt);
+            }
+        });
         jMenu7.add(menuTablaBancos);
 
         menuTablaTipoPago.setText("Tabla Tipo de pago");
         jMenu7.add(menuTablaTipoPago);
 
         menuTablaTipoMoneda.setText("Tabla Tipo de monedas");
+        menuTablaTipoMoneda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuTablaTipoMonedaActionPerformed(evt);
+            }
+        });
         jMenu7.add(menuTablaTipoMoneda);
 
         jMenu4.add(jMenu7);
@@ -187,14 +188,24 @@ public class MdiGeneral extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void menuTablaBancosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuTablaBancosActionPerformed
         // TODO add your handling code here:
         MantenimientoBancos ventana = new MantenimientoBancos();
         jDesktopPane1.add(ventana);
         Dimension desktopSize = jDesktopPane1.getSize();
         Dimension FrameSize = ventana.getSize();
         ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    }//GEN-LAST:event_menuTablaBancosActionPerformed
+
+    private void menuTablaTipoMonedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuTablaTipoMonedaActionPerformed
+        // TODO add your handling code here:
+        MantenimientoTipoMonedas ventana = new MantenimientoTipoMonedas();
+        jDesktopPane1.add(ventana);
+        Dimension desktopSize = jDesktopPane1.getSize();
+        Dimension FrameSize = ventana.getSize();
+        ventana.setLocation((desktopSize.width - FrameSize.width) / 2, (desktopSize.height - FrameSize.height) / 2);
+    }//GEN-LAST:event_menuTablaTipoMonedaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -246,7 +257,6 @@ public class MdiGeneral extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem menuAbrir_sesion;
     private javax.swing.JMenuItem menuCerrar_sesion;
     private javax.swing.JMenuItem menuTablaBancos;
