@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 controlador\Cursos.class
+=======
+>>>>>>> 90cbe5dd5121274131c5e83af823ac4a7f5cab19
 vista\Login$2.class
 modelo\UsuarioDAO.class
 vista\MantenimientoCursos$4.class
@@ -7,6 +10,7 @@ vista\MdiGeneral.class
 modelo\TiposDePagoDAO.class
 vista\MantenimientoCursos$8.class
 vista\Login$3.class
+<<<<<<< HEAD
 vista\MantenimientoCursos$1.class
 modelo\Conexion.class
 vista\MantenimientoCursos$3.class
@@ -24,4 +28,10 @@ controlador\TiposDePagos.class
 modelo\EmpleadoDAO.class
 vista\Login$4.class
 vista\MantenimientoCursos$7.class
+=======
+vista\MdiGeneral$2.class
+vista\Login$1.class
+vista\Login.class
+vista\Login$4.class
+>>>>>>> 90cbe5dd5121274131c5e83af823ac4a7f5cab19
 vista\MdiGeneral$3.class

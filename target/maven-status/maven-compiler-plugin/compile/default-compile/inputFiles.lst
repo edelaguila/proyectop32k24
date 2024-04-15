@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Joseg\OneDrive\Desktop\Programación III Proyecto\proyectop32k24\src\main\java\vista\Login.java
 C:\Users\Joseg\OneDrive\Desktop\Programación III Proyecto\proyectop32k24\src\main\java\modelo\Conexion.java
 C:\Users\Joseg\OneDrive\Desktop\Programación III Proyecto\proyectop32k24\src\main\java\modelo\EmpleadoDAO.java
@@ -8,3 +9,15 @@ C:\Users\Joseg\OneDrive\Desktop\Programación III Proyecto\proyectop32k24\src\ma
 C:\Users\Joseg\OneDrive\Desktop\Programación III Proyecto\proyectop32k24\src\main\java\controlador\Cursos.java
 C:\Users\Joseg\OneDrive\Desktop\Programación III Proyecto\proyectop32k24\src\main\java\modelo\CursosDAO.java
 C:\Users\Joseg\OneDrive\Desktop\Programación III Proyecto\proyectop32k24\src\main\java\vista\MdiGeneral.java
+=======
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\controlador\Cursos.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\controlador\Empleado.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\vista\Login.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\modelo\Conexion.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\vista\MantenimientoCursos.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\modelo\EmpleadoDAO.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\vista\MdiGeneral.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\controlador\Usuario.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\modelo\CursosDAO.java
+C:\UMG\Quinto Semestre\ProgramacionIII\ProgramasGitHub\proyectop32k24\src\main\java\modelo\UsuarioDAO.java
+>>>>>>> 90cbe5dd5121274131c5e83af823ac4a7f5cab19
