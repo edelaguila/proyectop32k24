@@ -26,7 +26,7 @@ public class Seccion {
         return codigo_seccion;
     }
 
-    public void setCodigo_seccion(String codigo_curso) {
+    public void setCodigo_seccion(String codigo_seccion) {
         this.codigo_seccion = codigo_seccion;
     }
 
