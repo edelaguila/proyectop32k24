@@ -146,4 +146,27 @@ CREATE TABLE asignacioncursosmastros
   FOREIGN KEY (codigo_curso) REFERENCES cursos(codigo_curso),
   FOREIGN KEY (codigo_maestro) REFERENCES maestros(codigo_maestro)
   ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+  
+-- -----------------------------------------------------
+-- Table `educativo`.`Tabla Tipo de monedas`
+-- -----------------------------------------------------
+CREATE TABLE tipomoneda
+(
+	id_moneda INT PRIMARY KEY,
+    nombre_moneda VARCHAR(30)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE caja
+(
+	idTransaccion INT PRIMARY KEY,
+	nombre_deudor VARCHAR(30),
+	monto DECIMAL
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE bancoasociado
+(
+	idBanco INT PRIMARY KEY,
+    idCuenta INT,
+    cambioMoneda VARCHAR(30),
+    monto DECIMAL
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;

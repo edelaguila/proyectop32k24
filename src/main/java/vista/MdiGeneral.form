@@ -79,6 +79,35 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Procesos"/>
           </Properties>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="jMenu8">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Asignaci&#xf3;n de Cursos a Maestros "/>
+              </Properties>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="jMenu7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tesoreria"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="menuTablaBancos">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tabla Bancos"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="menuTablaTipoPago">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tabla Tipo de pago"/>
+                  </Properties>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="menuTablaTipoMoneda">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tabla Tipo de monedas"/>
+                  </Properties>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu5">
           <Properties>
