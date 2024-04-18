@@ -32,12 +32,12 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
 
     public void llenadoDeTablas() {
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("Carnet Alumno");
-        modelo.addColumn("nombre");
-        modelo.addColumn("Direccion");
-        modelo.addColumn("Telefono");
-        modelo.addColumn("Email");
-        modelo.addColumn("Estatus");
+        modelo.addColumn("carnet_alumno");
+        modelo.addColumn("nombre_alumno");
+        modelo.addColumn("direccion_alumno");
+        modelo.addColumn("telefono_alumno");
+        modelo.addColumn("email_alumno");
+        modelo.addColumn("estatus_alumno");
         AlumnosDAO alumnoDAO = new AlumnosDAO();
         List<Alumnos> alumnos = alumnoDAO.select();
         tablaAlumnos.setModel(modelo);
@@ -54,7 +54,7 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
         }
     }
 
-    public void buscarVendedor() {
+    public void buscarAlumno() {
         Alumnos alumnoAConsultar = new Alumnos();
         AlumnosDAO alumnoDAO = new AlumnosDAO();
         alumnoAConsultar.setCarnet_alumno((txtbuscado.getText()));
@@ -374,7 +374,7 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        buscarVendedor();
+        buscarAlumno();
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed

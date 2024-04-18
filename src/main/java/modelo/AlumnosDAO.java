@@ -15,10 +15,10 @@ import java.util.List;
  */
 public class AlumnosDAO {
      private static final String SQL_SELECT = "SELECT carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, estatus_alumno FROM alumnos";
-    private static final String SQL_INSERT = "INSERT INTO alumnos(carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, eatatus_alumno) VALUES(?, ?)";
+    private static final String SQL_INSERT = "INSERT INTO alumnos(carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alumno, estatus_alumno) VALUES(?, ?)";
     private static final String SQL_UPDATE = "UPDATE alumnos SET nombre_alumno=?, direccion_alumno=?, telefono_alumno=?, email_alumno=?, estatus_alumno=? WHERE carnet_alumno = ?";
-    private static final String SQL_DELETE = "DELETE FROM usuario WHERE id_usuario=?";
-    private static final String SQL_QUERY = "SELECT carnet_alumno, nombre_alumno, direccion_alumno, relefono_alumno, email_alummno, estatus_alummno FROM alumnos WHERE nombre_alumno = ?";
+    private static final String SQL_DELETE = "DELETE FROM alumnos WHERE carnet_alumno=?";
+    private static final String SQL_QUERY = "SELECT carnet_alumno, nombre_alumno, direccion_alumno, telefono_alumno, email_alummno, estatus_alummno FROM alumnos WHERE nombre_alumno = ?";
 
     public List<Alumnos> select() {
         Connection conn = null;
