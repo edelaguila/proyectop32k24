@@ -5,9 +5,14 @@
 package modelo;
 
 import controlador.Alumnos;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  *
@@ -93,15 +98,16 @@ public class AlumnosDAO {
         int rows = 0;
         try {
             conn = Conexion.getConnection();
+            stmt.setString(1, alumnos.getCarnet_alumno());
             System.out.println("ejecutando query: " + SQL_UPDATE);
             stmt = conn.prepareStatement(SQL_UPDATE);
+            stmt.setString(1,alumnos.getCarnet_alumno());
             stmt.setString(2, alumnos.getNombre_alumno());
             stmt.setString(3, alumnos.getDireccion_alumno());
-            stmt.setString(1, alumnos.getCarnet_alumno());
+            stmt.setString(4, alumnos.getTelefono_alumno());
             stmt.setString(5, alumnos.getEmail_alumno());
             stmt.setString(6, alumnos.getEstatus_alumno());
-            stmt.setString(4, alumnos.getTelefono_alumno());
-
+    
             rows = stmt.executeUpdate();
             System.out.println("Registros actualizado:" + rows);
 
