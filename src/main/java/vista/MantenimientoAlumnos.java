@@ -32,12 +32,12 @@ public class MantenimientoAlumnos extends javax.swing.JInternalFrame {
 
     public void llenadoDeTablas() {
         DefaultTableModel modelo = new DefaultTableModel();
-        modelo.addColumn("carnet_alumno");
-        modelo.addColumn("nombre_alumno");
-        modelo.addColumn("direccion_alumno");
-        modelo.addColumn("telefono_alumno");
-        modelo.addColumn("email_alumno");
-        modelo.addColumn("estatus_alumno");
+        modelo.addColumn("Carnet");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Direccion");
+        modelo.addColumn("Telefono");
+        modelo.addColumn("Email");
+        modelo.addColumn("Estatus");
         AlumnosDAO alumnoDAO = new AlumnosDAO();
         List<Alumnos> alumnos = alumnoDAO.select();
         tablaAlumnos.setModel(modelo);
